@@ -1,0 +1,15 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: spring
+  labels:
+    app: ventas-app-back
+spec:   
+  ports:
+  - name: ventas-app-back
+    port: 8080
+    nodePort : 30780 
+  #type: LoadBalancer
+  type: NodePort
+  selector:
+   app: ventas-app-back
